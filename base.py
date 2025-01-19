@@ -17,14 +17,14 @@ nbr_actions = int(env.action_space.n)
 
 
 def epsilon_greedy(env, state, Q, epsilon): 
-    if np.random.rand() < epsilon: #aléatoire
+    if np.random.rand() < epsilon: 
         action = np.random.choice(nbr_actions)
     else: 
         action = np.argmax(Q[state])
     
     return action
 
-def Q_learning(alpha,epsilon,gamma):  #alpha > 0 , epsilon un petit > 0, gamma > 0
+def Q_learning(alpha,epsilon,gamma):  
     
     Q = defaultdict(lambda: np.zeros(nbr_actions))
     fail = 0
